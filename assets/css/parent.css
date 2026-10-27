@@ -1,0 +1,1162 @@
+/* Parent module surfaces inherit the VaxCare palette and shared type system. */
+.parent-app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.parent-header {
+    position: relative;
+    z-index: 5;
+    padding: 18px 22px 0;
+}
+
+.parent-navbar {
+    max-width: 1440px;
+    min-height: 78px;
+    margin: 0 auto;
+    padding: 10px 18px;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    border-radius: 22px;
+    background: var(--panel-strong);
+    box-shadow: 0 12px 30px rgba(63, 68, 122, 0.1);
+}
+
+.parent-brand {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.parent-brand .brand-name { font-size: .98rem; }
+
+.parent-brand .brand-logo {
+    width: auto;
+    height: 52px;
+    max-width: 160px;
+}
+
+.parent-menu-toggle {
+    display: none;
+}
+
+.parent-nav-content,
+.parent-nav-links,
+.parent-nav-actions {
+    display: flex;
+    align-items: center;
+}
+
+.parent-nav-content {
+    flex: 1;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.parent-nav-links {
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.parent-nav-link {
+    min-height: 42px;
+    padding: 9px 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    border-radius: 12px;
+    color: var(--muted);
+    font-size: 0.88rem;
+    font-weight: 600;
+    transition: color 0.2s ease, background 0.2s ease;
+}
+
+.parent-nav-link:hover,
+.parent-nav-link.is-active {
+    color: var(--purple-dark);
+    background: var(--purple-soft);
+}
+
+.parent-nav-actions {
+    flex: 0 0 auto;
+    gap: 10px;
+}
+
+.parent-dropdown {
+    position: relative;
+}
+
+.notification-trigger,
+.profile-trigger {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    cursor: pointer;
+    list-style: none;
+}
+
+.notification-trigger::-webkit-details-marker,
+.profile-trigger::-webkit-details-marker {
+    display: none;
+}
+
+.notification-trigger {
+    width: 44px;
+    justify-content: center;
+    position: relative;
+    border-radius: 14px;
+    color: var(--purple-dark);
+    background: var(--purple-soft);
+    font-size: 1.1rem;
+}
+
+.notification-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    min-width: 19px;
+    height: 19px;
+    padding: 0 4px;
+    display: grid;
+    place-items: center;
+    border-radius: 999px;
+    color: var(--white);
+    background: var(--pink-deep);
+    font-size: 0.65rem;
+    font-weight: 800;
+}
+
+.profile-trigger {
+    padding: 4px 8px 4px 4px;
+    border-radius: 999px;
+    color: var(--heading);
+    font-size: 0.88rem;
+    font-weight: 700;
+}
+
+.profile-avatar,
+.child-avatar {
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    color: var(--purple-dark);
+    background: var(--purple-soft);
+    font-weight: 800;
+}
+
+.profile-avatar {
+    width: 36px;
+    height: 36px;
+}
+
+.parent-dropdown-panel {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    z-index: 10;
+    width: min(330px, calc(100vw - 32px));
+    padding: 16px;
+    border-radius: 18px;
+    background: var(--panel-strong);
+    box-shadow: var(--shadow);
+}
+
+.dropdown-panel-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 10px;
+    color: var(--heading);
+}
+
+.dropdown-panel-heading span {
+    color: var(--muted);
+    font-size: 0.8rem;
+}
+
+.notification-preview {
+    margin: 0;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+.notification-preview.is-unread {
+    color: var(--heading);
+    font-weight: 600;
+}
+
+.text-action {
+    margin-top: 12px;
+    padding: 0;
+    border: 0;
+    color: var(--purple-dark);
+    background: transparent;
+    font-weight: 700;
+}
+
+.profile-panel {
+    width: 205px;
+    padding: 8px;
+}
+
+.profile-panel a {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px;
+    border-radius: 11px;
+    color: var(--text);
+    font-size: 0.9rem;
+}
+
+.profile-panel a:hover {
+    color: var(--purple-dark);
+    background: var(--purple-soft);
+}
+
+.parent-main {
+    flex: 1 0 auto;
+    padding-top: 48px;
+    padding-bottom: 68px;
+}
+
+.parent-dashboard .parent-stat-card {
+    height: 100%;
+}
+
+.parent-dashboard .dashboard-content-row {
+    align-items: flex-start;
+}
+
+.parent-dashboard .dashboard-column {
+    min-width: 0;
+}
+
+.parent-dashboard .upcoming-card {
+    min-height: 0;
+}
+
+.parent-dashboard .upcoming-card .empty-state {
+    padding-top: 28px;
+    padding-bottom: 28px;
+}
+
+.parent-dashboard .quick-actions-card {
+    height: auto;
+}
+
+.parent-dashboard .notifications-card {
+    height: auto;
+}
+
+.parent-alert {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin-bottom: 24px;
+    padding: 13px 15px;
+    border-radius: 14px;
+    color: var(--green-deep);
+    background: var(--green);
+}
+
+.parent-alert-danger {
+    color: var(--danger-deep);
+    background: var(--danger-soft);
+}
+
+.parent-alert button {
+    margin-left: auto;
+    padding: 4px;
+    border: 0;
+    color: inherit;
+    background: transparent;
+}
+
+.parent-eyebrow {
+    display: inline-flex;
+    padding: 7px 12px;
+    border-radius: 999px;
+    color: var(--purple-dark);
+    background: var(--purple-soft);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.parent-heading {
+    margin-bottom: 28px;
+}
+
+.parent-heading h1 {
+    margin: 10px 0 8px;
+    color: var(--heading);
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    line-height: 1.06;
+    letter-spacing: -0.04em;
+    font-weight: 800;
+}
+
+.parent-heading p {
+    max-width: 64ch;
+    margin: 0;
+    color: var(--muted);
+    font-size: 1rem;
+}
+
+.parent-card {
+    padding: 24px;
+    border: 0;
+    border-radius: 24px;
+    background: var(--panel-strong);
+    box-shadow: var(--shadow);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.parent-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 22px 40px rgba(63, 68, 122, 0.15);
+}
+
+.parent-card-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.parent-card-heading h2,
+.parent-card-heading h3 {
+    margin: 0;
+    color: var(--heading);
+    font-size: 1.15rem;
+    font-weight: 800;
+}
+
+.parent-card-heading p {
+    margin: 5px 0 0;
+    color: var(--muted);
+    font-size: 0.88rem;
+}
+
+.parent-stat-card {
+    min-height: 152px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+}
+
+.parent-stat-icon {
+    width: 52px;
+    height: 52px;
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    border-radius: 17px;
+    color: var(--purple-dark);
+    background: var(--purple-soft);
+    font-size: 1.25rem;
+}
+
+.parent-stat-icon.orange { color: var(--orange-deep); background: var(--orange); }
+.parent-stat-icon.green { color: var(--green-deep); background: var(--green); }
+.parent-stat-icon.pink { color: var(--pink-deep); background: var(--pink); }
+
+.parent-stat-number {
+    display: block;
+    color: var(--heading);
+    font-size: 2rem;
+    line-height: 1;
+    font-weight: 800;
+}
+
+.parent-stat-label {
+    display: block;
+    margin-top: 7px;
+    color: var(--muted);
+    font-size: 0.86rem;
+    font-weight: 600;
+}
+
+.parent-list {
+    display: grid;
+    gap: 12px;
+}
+
+.upcoming-row,
+.booking-row,
+.schedule-row,
+.hospital-card,
+.child-card {
+    border-radius: 18px;
+    background: var(--panel-strong);
+    box-shadow: 0 10px 26px rgba(63, 68, 122, 0.08);
+}
+
+.upcoming-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    align-items: center;
+    gap: 14px;
+    padding: 16px;
+}
+
+.upcoming-row h3,
+.booking-row h3,
+.hospital-card h3,
+.child-card h3 {
+    margin: 0;
+    color: var(--heading);
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+.upcoming-row p,
+.booking-row p,
+.hospital-card p,
+.child-card p {
+    margin: 4px 0 0;
+    color: var(--muted);
+    font-size: 0.86rem;
+}
+
+.days-pill,
+.status-badge,
+.booking-time-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 7px 11px;
+    border-radius: 999px;
+    color: var(--purple);
+    background: var(--purple-soft);
+    font-size: 0.76rem;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.status-pending { color: var(--orange-deep); background: var(--orange); }
+.status-approved { color: var(--purple-dark); background: var(--purple-soft); }
+.status-booked { color: var(--purple); background: var(--purple-soft); }
+.status-vaccinated { color: var(--green-deep); background: var(--green); }
+.status-rejected,
+.status-missed,
+.status-not_vaccinated { color: var(--danger-deep); background: var(--danger-soft); }
+.days-pill.is-overdue { color: var(--danger-deep); background: var(--danger-soft); }
+
+.parent-btn-secondary {
+    min-height: 46px;
+    padding: 0 18px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    color: var(--purple-dark);
+    background: var(--panel-strong);
+    font-weight: 700;
+}
+
+.parent-app .btn.btn-secondary {
+    min-height: 46px;
+    padding: 0 18px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    color: var(--purple-dark);
+    background: var(--panel-strong);
+    font-weight: 700;
+}
+
+.parent-app .btn.btn-secondary:hover {
+    color: var(--purple-dark);
+    background: var(--purple-soft);
+}
+
+.parent-btn-secondary:hover {
+    color: var(--purple-dark);
+    background: var(--purple-soft);
+}
+
+.parent-btn-small {
+    min-height: 38px;
+    padding: 0 14px;
+    border-radius: 12px;
+    font-size: 0.86rem;
+}
+
+.quick-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.notification-list {
+    display: grid;
+    gap: 0;
+}
+
+.notification-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 13px 0;
+    border-bottom: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 0.88rem;
+}
+
+.notification-item:last-child { border-bottom: 0; }
+.notification-dot { width: 8px; height: 8px; margin-top: 7px; border-radius: 50%; background: var(--purple); }
+
+.child-card,
+.hospital-card,
+.booking-row {
+    height: 100%;
+    padding: 22px;
+}
+
+.child-card-top {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 17px;
+}
+
+.child-avatar {
+    width: 54px;
+    height: 54px;
+    color: var(--pink-deep);
+    background: var(--pink);
+    font-size: 1.05rem;
+}
+
+.child-meta {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin: 18px 0;
+}
+
+.child-meta div {
+    padding: 10px 12px;
+    border-radius: 12px;
+    background: var(--soft);
+}
+
+.child-meta span {
+    display: block;
+    color: var(--muted);
+    font-size: 0.72rem;
+}
+
+.child-meta strong {
+    color: var(--heading);
+    font-size: 0.86rem;
+}
+
+.parent-progress-label {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 8px;
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.parent-progress {
+    height: 8px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: var(--purple-soft);
+}
+
+.parent-progress span {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, var(--purple), #8b80eb);
+}
+
+.child-card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.child-card-actions form { display: inline-flex; }
+
+/* Parent empty-state text keeps at least 5.91:1 contrast on the white card surface. */
+.empty-state {
+    padding: 42px 24px;
+    text-align: center;
+}
+
+.empty-art {
+    width: 82px;
+    height: 82px;
+    margin: 0 auto 18px;
+    display: grid;
+    place-items: center;
+    border-radius: 28px;
+    color: var(--purple-dark);
+    background: var(--purple-soft);
+    font-size: 2rem;
+}
+
+.empty-state h3 { margin: 0 0 8px; color: var(--heading); font-weight: 800; }
+.empty-state p { max-width: 45ch; margin: 0 auto 18px; color: var(--muted); }
+
+.parent-form-card {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: clamp(22px, 4vw, 36px);
+}
+
+.parent-form-card .form-group { margin-bottom: 18px; }
+.parent-form-card label { display: block; margin-bottom: 7px; }
+.parent-form-card input,
+.parent-form-card select,
+.parent-form-card textarea { margin: 0; }
+.parent-form-note {
+    display: flex;
+    gap: 10px;
+    margin: 18px 0 24px;
+    padding: 13px 14px;
+    border-radius: 13px;
+    color: var(--green-deep);
+    background: var(--green);
+    font-size: 0.87rem;
+}
+
+.gender-options,
+.booking-time-options,
+.child-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.gender-choice,
+.booking-time-option,
+.child-tab {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 15px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    color: var(--muted);
+    background: var(--panel-strong);
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.gender-choice input,
+.booking-time-option input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.gender-choice.is-selected,
+.gender-choice:has(input:checked),
+.booking-time-option:has(input:checked),
+.child-tab.is-active {
+    border-color: transparent;
+    color: var(--purple-dark);
+    background: var(--purple-soft);
+}
+
+.child-tab { text-decoration: none; }
+
+.schedule-list {
+    display: grid;
+    gap: 13px;
+}
+
+.schedule-row {
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 18px 18px 22px;
+}
+
+.schedule-row::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 5px;
+    background: var(--orange-deep);
+}
+
+.schedule-row.status-booked::before,
+.schedule-row.status-approved::before { background: var(--purple); }
+.schedule-row.status-vaccinated::before { background: var(--green-deep); }
+.schedule-row.status-missed::before,
+.schedule-row.status-rejected::before { background: var(--danger-deep); }
+.schedule-row h3 { margin: 0; color: var(--heading); font-size: 1rem; font-weight: 800; }
+.schedule-row p { margin: 4px 0 0; color: var(--muted); font-size: 0.84rem; }
+
+.hospital-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.hospital-card .hospital-details { display: grid; gap: 9px; margin: 15px 0 20px; }
+.hospital-card .hospital-details p { display: flex; gap: 8px; align-items: flex-start; margin: 0; }
+.hospital-card .hospital-card-actions { margin-top: auto; }
+
+.parent-search {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    border-radius: 20px;
+    background: var(--panel-strong);
+    box-shadow: var(--shadow);
+}
+
+.parent-search input {
+    flex: 1;
+    min-width: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.booking-stepper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 24px;
+}
+
+.booking-step {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--muted);
+    font-size: 0.84rem;
+    font-weight: 700;
+}
+
+.booking-step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 34px;
+    right: 12px;
+    top: 17px;
+    height: 1px;
+    background: var(--line);
+}
+
+.booking-step-number {
+    width: 34px;
+    height: 34px;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: var(--purple-dark);
+    background: var(--purple-soft);
+}
+
+.booking-step.is-active { color: var(--purple-dark); }
+.booking-step.is-active .booking-step-number { color: var(--white); background: var(--purple); }
+
+.booking-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.booking-remark {
+    margin-top: 14px;
+    padding: 12px;
+    border-radius: 12px;
+    color: var(--danger-deep);
+    background: var(--danger-soft);
+    font-size: 0.86rem;
+}
+
+.vaccine-record {
+    position: relative;
+    overflow: hidden;
+    padding: 24px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, var(--panel-strong), var(--purple-soft));
+    box-shadow: 0 10px 26px rgba(63, 68, 122, 0.08);
+}
+
+.vaccine-record::after {
+    content: "";
+    position: absolute;
+    right: -20px;
+    top: -32px;
+    width: 104px;
+    height: 104px;
+    border-radius: 50%;
+    background: var(--green);
+    opacity: 0.6;
+}
+
+.vaccine-record h3,
+.vaccine-record p { position: relative; z-index: 1; }
+.vaccine-record h3 { margin: 0 0 7px; color: var(--heading); font-weight: 800; }
+.vaccine-record p { margin: 4px 0; color: var(--muted); font-size: 0.88rem; }
+
+.parent-table-wrap { overflow-x: auto; }
+.parent-table { width: 100%; border-collapse: separate; border-spacing: 0 8px; }
+.parent-table th { padding: 8px 12px; color: var(--muted); font-size: 0.78rem; text-align: left; }
+.parent-table td { padding: 13px 12px; color: var(--text); background: var(--panel-strong); }
+.parent-table td:first-child { border-radius: 12px 0 0 12px; }
+.parent-table td:last-child { border-radius: 0 12px 12px 0; }
+
+.parent-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+    background: rgba(29, 36, 64, 0.35);
+}
+
+.parent-modal {
+    width: min(460px, 100%);
+    padding: 26px;
+    border-radius: 22px;
+    background: var(--panel-strong);
+    box-shadow: var(--shadow);
+}
+
+.parent-modal h2 { color: var(--heading); font-size: 1.25rem; font-weight: 800; }
+.parent-modal p { color: var(--muted); }
+
+.parent-confirm-dialog {
+    width: min(460px, calc(100% - 32px));
+    padding: 24px;
+    border: 0;
+    border-radius: 22px;
+    color: var(--text);
+    background: var(--panel-strong);
+    box-shadow: var(--shadow);
+}
+
+.parent-confirm-dialog::backdrop { background: rgba(29, 36, 64, 0.38); }
+.parent-confirm-dialog h2 { color: var(--heading); font-size: 1.25rem; font-weight: 800; }
+.parent-confirm-dialog p { color: var(--muted); }
+
+.parent-app :focus-visible {
+    outline: 3px solid rgba(101, 87, 217, 0.55);
+    outline-offset: 3px;
+}
+
+@media (max-width: 1120px) {
+    .parent-navbar { flex-wrap: wrap; }
+    .parent-menu-toggle {
+        width: 44px;
+        height: 44px;
+        margin-left: auto;
+        display: grid;
+        place-items: center;
+        border: 0;
+        border-radius: 13px;
+        color: var(--purple-dark);
+        background: var(--purple-soft);
+        font-size: 1.4rem;
+    }
+    .parent-nav-content { display: none; flex-basis: 100%; flex-direction: column; align-items: stretch; padding-top: 10px; }
+    .parent-nav-content.is-open { display: flex; }
+    .parent-nav-links { align-items: stretch; flex-direction: column; }
+    .parent-nav-link { width: 100%; }
+    .parent-nav-actions { justify-content: flex-end; padding-top: 10px; }
+}
+
+@media (max-width: 767px) {
+    .parent-header { padding: 12px 12px 0; }
+    .parent-navbar { min-height: 66px; padding: 8px 12px; border-radius: 18px; }
+    .parent-brand .brand-logo { height: 46px; max-width: 140px; }
+    .parent-main { padding-top: 32px; }
+    .parent-card { padding: 20px; border-radius: 20px; }
+    .parent-stat-card { min-height: 124px; }
+    .upcoming-row,
+    .schedule-row { grid-template-columns: 1fr auto; }
+    .upcoming-row .days-pill,
+    .schedule-row .status-badge { grid-column: 1; justify-self: start; }
+    .upcoming-row .btn,
+    .schedule-row .btn { grid-column: 2; grid-row: 1 / span 2; }
+    .booking-row { flex-direction: column; }
+    .booking-step { flex-direction: column; align-items: flex-start; font-size: 0.72rem; }
+    .booking-step:not(:last-child)::after { left: 32px; right: -8px; top: 17px; }
+    .booking-step-number { flex: 0 0 auto; }
+}
+
+@media print {
+    body, .parent-app { background: #fff !important; }
+    .parent-header, .site-footer, .parent-alert, .no-print, body::before, body::after { display: none !important; }
+    .parent-main { width: 100%; max-width: none; padding: 0; }
+    .parent-card, .vaccine-record { box-shadow: none; border: 1px solid #ddd; break-inside: avoid; }
+}
+
+/* Parent cards and navigation share the premium inner highlight and raised hover tier. */
+.parent-navbar,
+.parent-dropdown-panel,
+.parent-card,
+.upcoming-row,
+.booking-row,
+.schedule-row,
+.hospital-card,
+.child-card {
+    box-shadow: var(--shadow), inset 0 1px 0 rgba(255, 255, 255, .6);
+}
+
+.parent-card {
+    transition: transform .22s ease, box-shadow .22s ease;
+}
+
+.parent-card:hover {
+    box-shadow: var(--shadow-lift), inset 0 1px 0 rgba(255, 255, 255, .6);
+}
+
+/* Deep status colors retain at least 5.01:1 contrast against their pastel icon tiles. */
+.parent-stat-icon {
+    background: linear-gradient(145deg, rgba(255, 255, 255, .68), transparent 78%), var(--purple-soft);
+    box-shadow: 0 8px 18px rgba(78, 67, 184, .12);
+}
+
+.parent-stat-icon.orange {
+    background: linear-gradient(145deg, rgba(255, 255, 255, .68), transparent 78%), var(--orange);
+    box-shadow: 0 8px 18px rgba(122, 74, 18, .14);
+}
+
+.parent-stat-icon.green {
+    background: linear-gradient(145deg, rgba(255, 255, 255, .68), transparent 78%), var(--green);
+    box-shadow: 0 8px 18px rgba(31, 107, 77, .14);
+}
+
+.parent-stat-icon.pink {
+    background: linear-gradient(145deg, rgba(255, 255, 255, .68), transparent 78%), var(--pink);
+    box-shadow: 0 8px 18px rgba(156, 55, 100, .14);
+}
+
+/* A small status-colored baseline anchors the metric without suggesting a trend. */
+.parent-stat-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.parent-stat-card::after {
+    position: absolute;
+    right: 18px;
+    bottom: 16px;
+    width: 34px;
+    height: 3px;
+    border-radius: 999px;
+    background: var(--purple);
+    opacity: .42;
+    content: "";
+}
+
+.parent-stat-card:has(.parent-stat-icon.orange)::after { background: var(--orange-deep); }
+.parent-stat-card:has(.parent-stat-icon.green)::after { background: var(--green-deep); }
+.parent-stat-card:has(.parent-stat-icon.pink)::after { background: var(--pink-deep); }
+
+/* Eyebrow labels align with other dashboards and use the same quiet marker. */
+.parent-eyebrow {
+    align-items: center;
+    gap: 7px;
+    letter-spacing: .1em;
+}
+
+.parent-eyebrow::before {
+    width: 6px;
+    height: 6px;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    background: var(--purple);
+    content: "";
+}
+
+.parent-heading {
+    position: relative;
+    isolation: isolate;
+    margin-bottom: 32px;
+}
+
+.parent-heading::after {
+    position: absolute;
+    z-index: -1;
+    top: -8px;
+    right: 5%;
+    width: 86px;
+    height: 54px;
+    border-radius: 14px;
+    background-image: radial-gradient(rgba(78, 67, 184, .14) 1px, transparent 1px);
+    background-size: 9px 9px;
+    content: "";
+    pointer-events: none;
+}
+
+.parent-card-heading {
+    margin-bottom: 22px;
+}
+
+/* Existing empty states become calm, illustrated cards instead of bare messages. */
+.empty-state {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    background-image:
+        radial-gradient(circle at 8px 8px, rgba(78, 67, 184, .14) 1px, transparent 1.5px),
+        radial-gradient(circle at 31px 25px, rgba(78, 67, 184, .1) 1px, transparent 1.5px),
+        radial-gradient(circle at 56px 8px, rgba(78, 67, 184, .13) 1px, transparent 1.5px),
+        radial-gradient(circle at 78px 24px, rgba(78, 67, 184, .1) 1px, transparent 1.5px);
+    background-position: right 18px top 18px;
+    background-repeat: no-repeat;
+}
+
+.empty-art {
+    background: linear-gradient(145deg, #fff, var(--purple-soft));
+    box-shadow: 0 10px 22px rgba(78, 67, 184, .12), inset 0 1px 0 rgba(255, 255, 255, .6);
+}
+
+.parent-dashboard .upcoming-card .empty-state {
+    padding-top: 34px;
+    padding-bottom: 34px;
+}
+
+/* Tables use soft striping, fuller row rhythm, and badge-matched first-cell accents. */
+.parent-table {
+    border-spacing: 0 9px;
+}
+
+.parent-table td {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    transition: background-color .2s ease;
+}
+
+.parent-table tbody tr:nth-child(even) td {
+    background: rgba(237, 240, 255, .46);
+}
+
+.parent-table tbody tr:hover td {
+    background: var(--page-bg);
+}
+
+.parent-table tbody tr:has(.status-pending) td:first-child { box-shadow: inset 3px 0 var(--orange-deep); }
+.parent-table tbody tr:has(.status-approved, .status-booked) td:first-child { box-shadow: inset 3px 0 var(--purple); }
+.parent-table tbody tr:has(.status-vaccinated) td:first-child { box-shadow: inset 3px 0 var(--green-deep); }
+.parent-table tbody tr:has(.status-rejected, .status-missed, .status-not_vaccinated) td:first-child { box-shadow: inset 3px 0 var(--danger-deep); }
+
+.schedule-row,
+.upcoming-row {
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.schedule-row:hover,
+.upcoming-row:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 18px 36px rgba(49, 54, 112, .14), inset 0 1px 0 rgba(255, 255, 255, .6);
+}
+
+.status-badge {
+    animation: parentStatusIn .24s cubic-bezier(.2, .8, .2, 1) both;
+}
+
+@keyframes parentStatusIn {
+    from { opacity: .6; transform: scale(.94); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Native confirmation dialogs fade and scale in without changing JavaScript behavior. */
+.parent-confirm-dialog {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity .2s ease, transform .24s cubic-bezier(.2, .8, .2, 1), overlay .24s allow-discrete, display .24s allow-discrete;
+}
+
+.parent-confirm-dialog:not([open]) {
+    opacity: 0;
+    transform: scale(.97);
+}
+
+.parent-confirm-dialog[open]::backdrop {
+    animation: parentBackdropIn .2s ease both;
+}
+
+@starting-style {
+    .parent-confirm-dialog[open] {
+        opacity: 0;
+        transform: scale(.97);
+    }
+}
+
+@keyframes parentBackdropIn {
+    from { background-color: rgba(29, 36, 64, 0); }
+    to { background-color: rgba(29, 36, 64, .38); }
+}
+
+/* Navigation, form choice pills, compact actions, and dismiss controls meet 44px minimums. */
+.parent-nav-link,
+.parent-menu-toggle,
+.notification-trigger,
+.profile-trigger,
+.parent-btn-small,
+.parent-app .btn,
+.gender-choice,
+.booking-time-option,
+.child-tab,
+.text-action,
+.parent-alert button {
+    min-height: 44px;
+}
+
+.parent-nav-link {
+    transition: color .2s ease, background-color .2s ease, transform .2s ease;
+}
+
+.parent-nav-link:active,
+.parent-app .btn:active,
+.parent-menu-toggle:active {
+    transform: scale(.97);
+}
+
+.text-action {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 8px;
+}
+
+.parent-alert button {
+    min-width: 44px;
+    display: grid;
+    place-items: center;
+}
+
+/* Toggle affordances stay full-height while the knob eases into its checked position. */
+.parent-app input[type="checkbox"],
+.parent-app input[type="radio"] {
+    accent-color: var(--purple);
+}
+
+@media (max-width: 767px) {
+    .parent-heading { margin-bottom: 28px; }
+    .parent-heading::after { right: 0; opacity: .58; }
+    .parent-stat-card { min-height: 132px; }
+}
